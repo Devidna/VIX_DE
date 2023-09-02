@@ -1,4 +1,12 @@
 -- SOAL 4
+
+-- Create 'KALBE' database
+CREATE DATABASE IF NOT EXISTS KALBE;
+
+-- Use the newly created database
+USE KALBE;
+
+-- Create the 'Inventory' table
 CREATE TABLE Inventory (
     Item_code INT PRIMARY KEY,
     Item_name VARCHAR(255) NOT NULL,
@@ -6,7 +14,7 @@ CREATE TABLE Inventory (
     Item_total INT
 );
 
--- Mengisi data pada tabel 'Inventory':
+-- Insert data into the 'Inventory' table
 INSERT INTO Inventory VALUES
     (2341, 'Promag Tablet', 3000, 100),
     (2342, 'Hydro Coco 250ML', 7000, 20),
@@ -32,6 +40,11 @@ WHERE Item_total = (SELECT MIN(Item_total) FROM Inventory);
 SELECT * FROM Inventory;
 
 -- SOAL 5
+
+-- Use 'KALBE' database
+USE KALBE;
+
+-- Create the 'customer_orders' table
 CREATE TABLE customer_orders (
   order_no INT PRIMARY KEY,
   purchase_amount DECIMAL(10, 2),
@@ -40,7 +53,7 @@ CREATE TABLE customer_orders (
   salesman_id INT
 );
 
--- Mengisi data pada tabel 'customer_order':
+-- Insert data into the 'customer_order' table:
 INSERT INTO customer_orders VALUES
 	(10001, 150, '2022-10-05', 2005, 3002),
 	(10009, 279, '2022-09-10', 2001, 3005),
